@@ -1,7 +1,24 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 const Home = () => {
+  const [workouts, setWorkouts] = useState(null);
+  useEffect(() => {
+    axios
+      .get("/api/workouts")
+      .then((response) => {
+        setWorkouts(response.data.allWorkouts);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div>
-      <h1>This is home</h1>
+      <div className="workouts">
+        {workouts &&
+          workouts.map((workout) => <p key={workout._id}>{workout.title}</p>)}
+      </div>
     </div>
   );
 };
