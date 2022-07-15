@@ -1,7 +1,10 @@
 // import all required packages
-import express from "express";
+import express, { json } from "express";
 import morgan from "morgan";
 import dotenv from "dotenv";
+import cors from "cors";
+// import routes
+import workoutRoutes from "./routes/workouts.js";
 
 dotenv.config({
   path: "./config.env",
@@ -11,6 +14,19 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // create morgan middleware
 app.use(morgan("dev"));
+
+// add CORS middleware
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+  })
+);
+// json middleware
+app.use(express.json());
+
+// calling routes
+app.use("/api/workouts", workoutRoutes);
 
 // listen for requests
 
