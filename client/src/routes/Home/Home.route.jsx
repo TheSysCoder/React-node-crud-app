@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import DetailsCard from "../../components/DetailsCard/DetailsCard.component";
+import "./styles.scss";
 
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
@@ -14,10 +16,12 @@ const Home = () => {
       });
   }, []);
   return (
-    <div>
-      <div className="workouts">
+    <div className="home">
+      <div className="workout">
         {workouts &&
-          workouts.map((workout) => <p key={workout._id}>{workout.title}</p>)}
+          workouts.map((workout) => (
+            <DetailsCard key={workout._id} workout={workout} />
+          ))}
       </div>
     </div>
   );

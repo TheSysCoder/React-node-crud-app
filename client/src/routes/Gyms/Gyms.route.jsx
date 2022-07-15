@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import GymCard from "../../components/GymCard/GymCard.component";
 
 const Gyms = () => {
   const [gyms, setGyms] = useState(null);
@@ -15,7 +16,7 @@ const Gyms = () => {
   }, []);
 
   return (
-    <div>{gyms && gyms.map((gym) => <p key={gym._id}>{gym.gymName}</p>)}</div>
+    <div>{gyms && gyms.map((gym) => <GymCard key={gym._id} gym={gym} />)}</div>
   );
 };
 
