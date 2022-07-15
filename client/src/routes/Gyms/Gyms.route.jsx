@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import GymCard from "../../components/GymCard/GymCard.component";
-
+import Card from "../../components/Card/Card.component";
+import "./styles.scss";
 const Gyms = () => {
   const [gyms, setGyms] = useState(null);
   useEffect(() => {
@@ -16,7 +16,26 @@ const Gyms = () => {
   }, []);
 
   return (
-    <div>{gyms && gyms.map((gym) => <GymCard key={gym._id} gym={gym} />)}</div>
+    <div className="gym">
+      <div>
+        {gyms &&
+          gyms.map((gym) => (
+            <div key={gym._id}>
+              <Card>
+                <h4>{gym.gymName}</h4>
+                <p>
+                  <strong>City: </strong>
+                  {gym.gymCity}
+                </p>
+                <p>
+                  <strong>Contact: </strong>
+                  {gym.gymContact}
+                </p>
+              </Card>
+            </div>
+          ))}
+      </div>
+    </div>
   );
 };
 

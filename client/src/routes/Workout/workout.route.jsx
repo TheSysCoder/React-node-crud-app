@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DetailsCard from "../../components/DetailsCard/DetailsCard.component";
 import "./styles.scss";
+import Card from "../../components/Card/Card.component";
 
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
@@ -20,7 +20,19 @@ const Home = () => {
       <div className="workout">
         {workouts &&
           workouts.map((workout) => (
-            <DetailsCard key={workout._id} workout={workout} />
+            <div key={workout._id}>
+              <Card>
+                <h4>{workout.title}</h4>
+                <p>
+                  <strong>Loads:</strong>
+                  {workout.load}
+                </p>
+                <p>
+                  <strong>Reps: </strong>
+                  {workout.reps}
+                </p>
+              </Card>
+            </div>
           ))}
       </div>
     </div>

@@ -1,0 +1,15 @@
+.logo{
+    font-size: 1.3em;
+    color:#1aac83;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.1);
+        transition: ease-out 1s;
+
+    }
+    
+}
+.link{
+    margin-left: 15px;
+}
