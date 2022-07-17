@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card.component";
+import GymForm from "../../components/Forms/gyms.component";
 import "./styles.scss";
 const Gyms = () => {
   const [gyms, setGyms] = useState(null);
@@ -35,6 +36,7 @@ const Gyms = () => {
             </div>
           ))}
       </div>
+      <GymForm />
     </div>
   );
 };

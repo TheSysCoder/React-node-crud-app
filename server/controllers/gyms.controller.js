@@ -12,7 +12,7 @@ export const getAllGyms = async (req, res, next) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: error.message,
+      error: error.error,
     });
   }
 };
@@ -33,7 +33,7 @@ export const createGyms = async (req, res, next) => {
     });
   } catch (error) {
     res.status(400).json({
-      message: error.message,
+      message: error.error,
     });
   }
 };
