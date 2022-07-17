@@ -1,0 +1,30 @@
+label, input{
+    display: block;
+}
+input{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+form button{
+    background-color: #1aac83;
+    border: none;
+    padding: 10px;
+    font-family: 'Poppins';
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+}
+div.error{
+    padding: 10px;
+    background:#ffefef;
+    border: 1px solid rgb(138, 11, 11);
+    color: rgb(138, 11, 11);
+    border-radius: 6px;
+    margin: 20px 0;
+}

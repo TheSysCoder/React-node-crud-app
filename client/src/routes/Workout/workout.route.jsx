@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.scss";
 import Card from "../../components/Card/Card.component";
+import Forms from "../../components/Forms/Forms.component";
 
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
@@ -35,6 +36,7 @@ const Home = () => {
             </div>
           ))}
       </div>
+      <Forms />
     </div>
   );
 };
